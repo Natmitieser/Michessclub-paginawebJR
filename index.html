@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JohnRod Chess League</title>
+
+<!-- Credenciales -->
+<meta name="author" content="Rodrigo Ricaldez Martínez">
+<meta name="creator" content="Stitch AI">
+
+<!-- SEO -->
+<meta name="description" content="Únete al JohnRod Chess League — el club de ajedrez más dinámico y futurista de Bolivia. Aprende, compite y desbloquea tu gran maestro interior.">
+<meta name="keywords" content="ajedrez, club, Bolivia, Santa Cruz, JohnRod Chess League, torneos, partidas, entrenamiento">
+
+<!-- Open Graph -->
+<meta property="og:title" content="JohnRod Chess League Bolivia">
+<meta property="og:description" content="Únete al club de ajedrez más dinámico y futurista de Bolivia.">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_piece_-_White_king.JPG">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://natmitieser.github.io/Michessclub-paginawebJR/">
+
+<!-- Favicon -->
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2728/2728984.png" type="image/png">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#0f49bd",
+        "background-dark": "#101622",
+      },
+      fontFamily: {
+        "display": ["Space Grotesk", "sans-serif"]
+      },
+    },
+  },
+}
+</script>
+</head>
+
+<body class="bg-background-dark font-display">
+
+<header class="flex items-center justify-center border-b border-b-[#282e39] p-4 text-white">
+    <div class="flex items-center gap-4 text-primary">
+      <span class="material-symbols-outlined text-4xl">chess</span>
+      <h2 class="text-lg font-bold">JohnRod Chess League</h2>
+    </div>
+</header>
+
+<main class="p-4 md:p-10 flex flex-col gap-10">
+  <!-- Hero -->
+  <section class="flex flex-col md:flex-row items-center gap-6 bg-[#101622] p-4 rounded-lg">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h1 class="text-white text-4xl md:text-6xl font-black">Desbloquea tu Gran Maestro Interior</h1>
+      <p class="text-white/80 mt-2 md:text-lg">Únete al club de ajedrez más dinámico y futurista de Bolivia.</p>
+      <button class="mt-4 bg-primary text-white font-bold px-5 py-2 rounded-lg hover:bg-primary/90">Más información</button>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWZJ5WG5CCNUklfhk8s8fHLtZvmjwVC-ABvs_kXwZO2guL_iywuHfUC8CMG-2AAXJYvnoe34xw2Kdrlodoq7rGDW8d_WTTOsD76Je2UNEeSr_uiJN3nEMEwQ-xHhlbUdRzsos3SjSyMzseTVsiZVCRazah6ZPBzitP9I-zEo5qfxm4TmiKEzjX0ANr9ehljh9uh6kMQcr43xwivW4mMTFgMevIMjRrHS1f-nEChKari3ILffix7ZPW3HRtiGXMru4hdjKkjQ8x66C" alt="Ajedrez" class="rounded-lg max-w-full h-auto">
+    </div>
+  </section>
+
+  <!-- Sobre el Club -->
+  <section class="text-white">
+    <h2 class="text-2xl font-bold mb-2">Sobre Nuestro Club</h2>
+    <p class="text-white/80">Nuestro club de ajedrez fue fundado con la misión de promover el juego del ajedrez y crear una vibrante comunidad de jugadores. Valoramos el pensamiento estratégico, la deportividad y el aprendizaje continuo.</p>
+  </section>
+
+  <!-- Formulario de contacto (Formspree) -->
+  <section class="bg-[#1a202c] p-4 rounded-xl text-center">
+    <h2 class="text-2xl font-bold mb-4">Para mayor información, deja tu número de teléfono</h2>
+    <form id="contact-form" action="https://formspree.io/f/xanlqdvk" method="POST" class="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto">
+      <input id="telefono-input" type="tel" name="telefono" placeholder="+591 63383781" required class="flex-1 px-4 py-2 rounded-l-lg bg-[#282e39] text-white placeholder:text-[#9da6b9]">
+      <button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-primary/90 font-bold">Enviar</button>
+    </form>
+    <!-- Mensaje de confirmación (hidden por defecto) -->
+    <div id="form-message" class="hidden mt-3 text-green-400 font-semibold">✅ Número enviado con éxito</div>
+
+    <script>
+      (function(){
+        const form = document.getElementById('contact-form');
+        const msg = document.getElementById('form-message');
+        const input = document.getElementById('telefono-input');
+
+        if(!form) return;
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const fd = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            body: fd,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(function(response){
+            if(response.ok){
+              // mostrar mensaje de éxito
+              msg.classList.remove('hidden');
+              // opcional: limpiar input
+              try{ input.value = ''; }catch(e){}
+            } else {
+              response.json().then(function(data){
+                // mostrar error breve en rojo si existe (mantener estilo mínimo)
+                msg.textContent = data.error || 'Error al enviar, intenta de nuevo.';
+                msg.classList.remove('hidden');
+                msg.classList.remove('text-green-400');
+                msg.classList.add('text-red-400');
+              }).catch(function(){
+                msg.textContent = 'Error al enviar, intenta de nuevo.';
+                msg.classList.remove('hidden');
+                msg.classList.remove('text-green-400');
+                msg.classList.add('text-red-400');
+              });
+            }
+          }).catch(function(){
+            msg.textContent = 'Error de red. Intenta nuevamente.';
+            msg.classList.remove('hidden');
+            msg.classList.remove('text-green-400');
+            msg.classList.add('text-red-400');
+          });
+        });
+      })();
+    </script>
+  </section>
+
+  <!-- Ubicación -->
+  <section class="text-white text-center">
+    <h2 class="text-2xl font-bold mb-2">Nuestra Ubicación</h2>
+    <div class="w-full h-80 rounded-xl overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.7861234!2d-63.180582!3d-17.783220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e8b5bb2dcd13%3A0x8b39bb2b4a0ff671!2sSanta%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1700000000000!5m2!1ses!2sbo" class="w-full h-full rounded-xl" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <p class="mt-4 text-white/80">Bolivia, Santa Cruz</p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="mt-10 border-t border-t-[#282e39] p-4 text-white">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-4 text-primary">
+      <span class="material-symbols-outlined text-4xl">chess</span>
+      <h2 class="font-bold text-lg">JohnRod Chess League</h2>
+    </div>
+    <p class="text-white/60">WhatsApp: +591 63383781</p>
+  </div>
+</footer>
+
+</body>
+</html>
