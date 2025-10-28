@@ -1,150 +1,158 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JohnRod Chess League</title>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JohnRod Chess League</title>
 
-    <meta name="author" content="Rodrigo Ricaldez Martínez" />
-    <meta name="creator" content="Stitch AI" />
-    <meta name="description" content="Únete al JohnRod Chess League — el club de ajedrez más dinámico y futurista de Bolivia." />
-    <meta name="keywords" content="ajedrez, club, Bolivia, Santa Cruz, JohnRod Chess League" />
+<!-- Credenciales -->
+<meta name="author" content="Rodrigo Ricaldez Martínez">
+<meta name="creator" content="Stitch AI">
 
-    <meta property="og:title" content="JohnRod Chess League Bolivia" />
-    <meta property="og:description" content="Únete al club de ajedrez más dinámico y futurista de Bolivia." />
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_piece_-_White_king.JPG" />
-    <meta property="og:type" content="website" />
+<!-- SEO -->
+<meta name="description" content="Únete al JohnRod Chess League — el club de ajedrez más dinámico y futurista de Bolivia. Aprende, compite y desbloquea tu gran maestro interior.">
+<meta name="keywords" content="ajedrez, club, Bolivia, Santa Cruz, JohnRod Chess League, torneos, partidas, entrenamiento">
 
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2728/2728984.png" type="image/png" />
+<!-- Open Graph -->
+<meta property="og:title" content="JohnRod Chess League Bolivia">
+<meta property="og:description" content="Únete al club de ajedrez más dinámico y futurista de Bolivia.">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_piece_-_White_king.JPG">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://natmitieser.github.io/Michessclub-paginawebJR/">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Favicon -->
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2728/2728984.png" type="image/png">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#0f49bd",
+        "background-dark": "#101622",
+      },
+      fontFamily: {
+        "display": ["Space Grotesk", "sans-serif"]
+      },
+    },
+  },
+}
+</script>
+</head>
+
+<body class="bg-background-dark font-display">
+
+<header class="flex items-center justify-center border-b border-b-[#282e39] p-4 text-white">
+    <div class="flex items-center gap-4 text-primary">
+      <img src="data:image/jpeg;base64,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" alt="JohnRod logo" class="w-10 h-10 object-contain" />
+      <h2 class="text-lg font-bold">JohnRod Chess League</h2>
+    </div>
+</header>
+
+<main class="p-4 md:p-10 flex flex-col gap-10">
+  <!-- Hero -->
+  <section class="flex flex-col md:flex-row items-center gap-6 bg-[#101622] p-4 rounded-lg">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h1 class="text-white text-4xl md:text-6xl font-black">Desbloquea tu Gran Maestro Interior</h1>
+      <p class="text-white/80 mt-2 md:text-lg">Únete al club de ajedrez más dinámico y futurista de Bolivia.</p>
+      <button class="mt-4 bg-primary text-white font-bold px-5 py-2 rounded-lg hover:bg-primary/90">Más información</button>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWZJ5WG5CCNUklfhk8s8fHLtZvmjwVC-ABvs_kXwZO2guL_iywuHfUC8CMG-2AAXJYvnoe34xw2Kdrlodoq7rGDW8d_WTTOsD76Je2UNEeSr_uiJN3nEMEwQ-xHhlbUdRzsos3SjSyMzseTVsiZVCRazah6ZPBzitP9I-zEo5qfxm4TmiKEzjX0ANr9ehljh9uh6kMQcr43xwivW4mMTFgMevIMjRrHS1f-nEChKari3ILffix7ZPW3HRtiGXMru4hdjKkjQ8x66C" alt="Ajedrez" class="rounded-lg max-w-full h-auto">
+    </div>
+  </section>
+
+  <!-- Sobre el Club -->
+  <section class="text-white">
+    <h2 class="text-2xl font-bold mb-2">Sobre Nuestro Club</h2>
+    <p class="text-white/80">Nuestro club de ajedrez fue fundado con la misión de promover el juego del ajedrez y crear una vibrante comunidad de jugadores. Valoramos el pensamiento estratégico, la deportividad y el aprendizaje continuo.</p>
+  </section>
+
+  <!-- Formulario de contacto (Formspree) -->
+  <section class="bg-[#1a202c] p-4 rounded-xl text-center">
+    <h2 class="text-2xl font-bold mb-4">Para mayor información, deja tu número de teléfono</h2>
+    <form id="contact-form" action="https://formspree.io/f/xanlqdvk" method="POST" class="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto">
+      <input id="telefono-input" type="tel" name="telefono" placeholder="+591 63383781" required class="flex-1 px-4 py-2 rounded-l-lg bg-[#282e39] text-white placeholder:text-[#9da6b9]">
+      <button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-primary/90 font-bold">Enviar</button>
+    </form>
+    <!-- Mensaje de confirmación (hidden por defecto) -->
+    <div id="form-message" class="hidden mt-3 text-green-400 font-semibold">✅ Número enviado con éxito</div>
 
     <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0f49bd',
-              'background-dark': '#101622',
-            },
-            fontFamily: {
-              display: ['Space Grotesk', 'sans-serif'],
-            },
-          },
-        },
-      };
+      (function(){
+        const form = document.getElementById('contact-form');
+        const msg = document.getElementById('form-message');
+        const input = document.getElementById('telefono-input');
+
+        if(!form) return;
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const fd = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            body: fd,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(function(response){
+            if(response.ok){
+              // mostrar mensaje de éxito
+              msg.classList.remove('hidden');
+              // opcional: limpiar input
+              try{ input.value = ''; }catch(e){}
+            } else {
+              response.json().then(function(data){
+                // mostrar error breve en rojo si existe (mantener estilo mínimo)
+                msg.textContent = data.error || 'Error al enviar, intenta de nuevo.';
+                msg.classList.remove('hidden');
+                msg.classList.remove('text-green-400');
+                msg.classList.add('text-red-400');
+              }).catch(function(){
+                msg.textContent = 'Error al enviar, intenta de nuevo.';
+                msg.classList.remove('hidden');
+                msg.classList.remove('text-green-400');
+                msg.classList.add('text-red-400');
+              });
+            }
+          }).catch(function(){
+            msg.textContent = 'Error de red. Intenta nuevamente.';
+            msg.classList.remove('hidden');
+            msg.classList.remove('text-green-400');
+            msg.classList.add('text-red-400');
+          });
+        });
+      })();
     </script>
-  </head>
+  </section>
 
-  <body class="bg-background-dark font-display">
-    <header class="flex items-center justify-center border-b border-b-[#282e39] p-4 text-white">
-      <div class="flex items-center gap-4 text-primary">
-        <svg class="w-12 h-8 flex-shrink-0" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JohnRod logo">
-          <ellipse cx="60" cy="40" rx="56" ry="30" fill="#0f49bd" />
-          <text x="60" y="50" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Space Grotesk, Arial, sans-serif" font-weight="700">JR</text>
-        </svg>
-        <h2 class="text-lg font-bold">JohnRod Chess League</h2>
-      </div>
-    </header>
+  <!-- Ubicación -->
+  <section class="text-white text-center">
+    <h2 class="text-2xl font-bold mb-2">Nuestra Ubicación</h2>
+    <div class="w-full h-80 rounded-xl overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.7861234!2d-63.180582!3d-17.783220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e8b5bb2dcd13%3A0x8b39bb2b4a0ff671!2sSanta%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1700000000000!5m2!1ses!2sbo" class="w-full h-full rounded-xl" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <p class="mt-4 text-white/80">Bolivia, Santa Cruz</p>
+  </section>
+</main>
 
-    <main class="p-4 md:p-10 flex flex-col gap-10">
-      <section class="flex flex-col md:flex-row items-center gap-6 bg-[#101622] p-4 rounded-lg">
-        <div class="md:w-1/2 text-center md:text-left">
-          <h1 class="text-white text-4xl md:text-6xl font-black">Desbloquea tu Gran Maestro Interior</h1>
-          <p class="text-white/80 mt-2 md:text-lg">Únete al club de ajedrez más dinámico y futurista de Bolivia.</p>
-          <button class="mt-4 bg-primary text-white font-bold px-5 py-2 rounded-lg hover:bg-primary/90">Más información</button>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWZJ5WG5CCNUklfhk8s8fHLtZvmjwVC-ABvs_kXwZO2guL_iywuHfUC8CMG-2AAXJYvnoe34xw2Kdrlodoq7rGDW8d_WTTOsD76Je2UNEeSr_uiJN3nEMEwQ-xHhlbUdRzsos3SjSyMzseTVsiZVCRazah6ZPBzitP9I-zEo5qfxm4TmiKEzjX0ANr9ehljh9uh6kMQcr43xwivW4mMTFgMevIMjRrHS1f-nEChKari3ILffix7ZPW3HRtiGXMru4hdjKkjQ8x66C" alt="Ajedrez" class="rounded-lg max-w-full h-auto" />
-        </div>
-      </section>
+<!-- Footer -->
+<footer class="mt-10 border-t border-t-[#282e39] p-4 text-white">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-4 text-primary">
+      <img src="data:image/jpeg;base64,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" alt="JohnRod logo" class="w-10 h-10 object-contain" />
+      <h2 class="font-bold text-lg">JohnRod Chess League</h2>
+    </div>
+    <p class="text-white/60">WhatsApp: +591 63383781</p>
+  </div>
+</footer>
 
-      <section class="text-white">
-        <h2 class="text-2xl font-bold mb-2">Sobre Nuestro Club</h2>
-        <p class="text-white/80">Nuestro club de ajedrez fue fundado con la misión de promover el juego del ajedrez y crear una vibrante comunidad de jugadores.</p>
-      </section>
-
-      <section class="bg-[#1a202c] p-4 rounded-xl text-center">
-        <h2 class="text-2xl font-bold mb-4">Para mayor información, deja tu número de teléfono</h2>
-        <form id="contact-form" action="https://formspree.io/f/xanlqdvk" method="POST" class="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto">
-          <input id="telefono-input" type="tel" name="telefono" placeholder="+591 63383781" required class="flex-1 px-4 py-2 rounded-l-lg bg-[#282e39] text-white placeholder:text-[#9da6b9]" />
-          <button type="submit" class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-primary/90 font-bold">Enviar</button>
-        </form>
-        <div id="form-message" class="hidden mt-3 text-green-400 font-semibold">✅ Número enviado con éxito</div>
-
-        <script>
-          (function () {
-            const form = document.getElementById('contact-form');
-            const msg = document.getElementById('form-message');
-            const input = document.getElementById('telefono-input');
-
-            if (!form) return;
-
-            form.addEventListener('submit', function (e) {
-              e.preventDefault();
-              const fd = new FormData(form);
-
-              fetch(form.action, {
-                method: 'POST',
-                body: fd,
-                headers: { Accept: 'application/json' },
-              })
-                .then(function (response) {
-                  if (response.ok) {
-                    msg.classList.remove('hidden');
-                    try {
-                      input.value = '';
-                    } catch (e) {}
-                  } else {
-                    response
-                      .json()
-                      .then(function (data) {
-                        msg.textContent = data.error || 'Error al enviar, intenta de nuevo.';
-                        msg.classList.remove('hidden');
-                        msg.classList.remove('text-green-400');
-                        msg.classList.add('text-red-400');
-                      })
-                      .catch(function () {
-                        msg.textContent = 'Error al enviar, intenta de nuevo.';
-                        msg.classList.remove('hidden');
-                        msg.classList.remove('text-green-400');
-                        msg.classList.add('text-red-400');
-                      });
-                  }
-                })
-                .catch(function () {
-                  msg.textContent = 'Error de red. Intenta nuevamente.';
-                  msg.classList.remove('hidden');
-                  msg.classList.remove('text-green-400');
-                  msg.classList.add('text-red-400');
-                });
-            });
-          })();
-        </script>
-      </section>
-
-      <section class="text-white text-center">
-        <h2 class="text-2xl font-bold mb-2">Nuestra Ubicación</h2>
-        <div class="w-full h-80 rounded-xl overflow-hidden">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.7861234!2d-63.180582!3d-17.783220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e8b5bb2dcd13%3A0x8b39bb2b4a0ff671!2sSanta%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1700000000000!5m2!1ses!2sbo" class="w-full h-full rounded-xl" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <p class="mt-4 text-white/80">Bolivia, Santa Cruz</p>
-      </section>
-    </main>
-
-    <footer class="mt-10 border-t border-t-[#282e39] p-4 text-white">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4 text-primary">
-          <svg class="w-12 h-8 flex-shrink-0" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JohnRod logo">
-            <ellipse cx="60" cy="40" rx="56" ry="30" fill="#0f49bd" />
-            <text x="60" y="50" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Space Grotesk, Arial, sans-serif" font-weight="700">JR</text>
-          </svg>
-          <h2 class="font-bold text-lg">JohnRod Chess League</h2>
-        </div>
-        <p class="text-white/60">WhatsApp: +591 63383781</p>
-      </div>
-    </footer>
-  </body>
+</body>
 </html>
